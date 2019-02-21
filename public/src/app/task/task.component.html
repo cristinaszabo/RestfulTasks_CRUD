@@ -1,0 +1,17 @@
+<div class="childComp">
+    
+  <h3>Edit a Task</h3>
+  <form (submit)="updateTask(task)">
+    <div class="form-group">
+      <label for="title"><span>Title</span></label>
+      <input type="text" class="form-control" id="title" name="title"
+            [(ngModel)]="taskToShow.title">
+      <label for="description"><span>Description</span></label>
+      <textarea class="form-control" id="description" rows="3" name="description"
+            [(ngModel)]="taskToShow.description"></textarea>
+      <button class="btn btn-primary btn-sm" type="submit">Update</button>
+    </div>
+  </form>
+
+</div>
+

@@ -8,12 +8,12 @@ import { HttpService } from './http.service';
 })
 
 export class AppComponent implements OnInit{
-  formName = "New Task";
-
+  
   tasks = [];
   one_task: any;
   newTask: any;
-  updatedTask: any;
+  selectedTask: any;
+  //updatedTask: any;
 
   constructor(private _httpService: HttpService){
   } 
@@ -45,16 +45,16 @@ export class AppComponent implements OnInit{
   }
 
   showEdit(task: any) {
-    this.formName = task._id;
-    this.updatedTask = task;
+    this.selectedTask = task;
+    //this.updatedTask = task;
   }
 
   updateTask() {
-    console.log(this.updatedTask);
-    this._httpService.updateTask(this.updatedTask).subscribe(task => {
+    console.log(this.selectedTask);
+    this._httpService.updateTask(this.selectedTask).subscribe(task => {
       this.tasks = task['data'];
       this.getTasks();
-      this.formName = null;
+      this.selectedTask = null;
     })
   }
 

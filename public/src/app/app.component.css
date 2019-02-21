@@ -1,3 +1,10 @@
+
+.image {
+    background-image: url("https://media.giphy.com/media/Xi2Xu0MejhsUo/giphy.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .container {
     padding:20px;
 }

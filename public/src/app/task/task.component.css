@@ -1,0 +1,11 @@
+.childComp {
+    border: 2px solid blue;
+    padding:20px;
+}
+.btn-primary {
+    margin:5px;
+}
+span {
+    font-family: cursive;
+    font-size: 20px;
+}
