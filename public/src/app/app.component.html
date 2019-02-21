@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>CRUD Restful Task API</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-6">
+          
+          <h3>New Task</h3>
+          <form (submit)="createTask()">
+            <div class="form-group">
+              <label for="title"><span>Title</span></label>
+              <input type="text" class="form-control" id="title" name="title" [(ngModel)]="newTask.title">
+              <label for="description"><span>Description</span></label>
+              <textarea class="form-control" id="description" rows="3" name="description" [(ngModel)]="newTask.description"></textarea>
+              <button class="btn btn-success btn-sm" type="submit">Submit</button>
+            </div>
+          </form>
+
+          <div *ngFor="let task of tasks">
+            <div *ngIf="formName == task._id" class="show">
+              <h3>Edit a Task</h3>
+              <form (submit)="updateTask(task)">
+                <div class="form-group">
+                  <label for="title"><span>Title</span></label>
+                  <input type="text" class="form-control" id="title" placeholder="" name="title"
+                        [(ngModel)]="updatedTask.title">
+                  <label for="description"><span>Description</span></label>
+                  <textarea class="form-control" id="description" rows="3" name="description"
+                        [(ngModel)]="updatedTask.description"></textarea>
+                  <button class="btn btn-primary btn-sm" type="submit">Update</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div><!-- left column ends -->
+
+        <div class="col-6">
+          <h3>All Tasks</h3>
+          <div *ngFor="let task of tasks" class="tasks">
+            <p><span>Title:</span> {{ task.title }}</p>
+            <p><span>Description: </span> {{ task.description }}</p>
+            <button type="button" class="btn btn-primary btn-sm" (click)="showEdit(task)">Edit</button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="deleteTask(task._id)">Delete</button>          
+          </div>
+        </div> <!-- right column ends -->
+
+      </div>
+    </div>
+  </body>
+
+</html>

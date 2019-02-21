@@ -1,0 +1,32 @@
+.container {
+    padding:20px;
+}
+span {
+    font-family: cursive;
+    font-size: 20px;
+}
+p {
+    font-style: italic;
+}
+.btn-success {
+    width: 120px;
+    margin-top:20px;
+}
+
+.tasks {
+    border: 3px solid purple;
+    border-radius: 20px;
+    padding:10px;
+    margin:5px;
+}
+.btn-primary, .btn-danger {
+    margin:5px;
+}
+.show {
+    border: 3px solid rgb(228, 93, 228);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top:10px;
+}
+
+
